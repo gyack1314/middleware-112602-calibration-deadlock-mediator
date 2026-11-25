@@ -1,0 +1,14 @@
+{"at":0,"kind":"owner","record":{"owner":"a","epoch":1}}
+{"at":0,"kind":"owner","record":{"owner":"b","epoch":1}}
+{"at":1,"kind":"request","record":{"tx":"x","attempt":1,"priority":5,"deadline":20,"resources":["a/r","b/s"]}}
+{"at":1,"kind":"request","record":{"tx":"y","attempt":1,"priority":2,"deadline":24,"resources":["a/r","b/s"]}}
+{"at":2,"kind":"hold","record":{"owner":"a","epoch":1,"resource":"r","tx":"x","attempt":1,"phase":"prepared"}}
+{"at":2,"kind":"hold","record":{"owner":"b","epoch":1,"resource":"s","tx":"y","attempt":1,"phase":"reversible"}}
+{"at":3,"kind":"wait","record":{"owner":"a","epoch":1,"resource":"r","tx":"y","attempt":1,"on":"x"}}
+{"at":3,"kind":"wait","record":{"owner":"b","epoch":1,"resource":"s","tx":"x","attempt":1,"on":"y"}}
+{"at":4,"kind":"scan","record":{}}
+{"at":5,"kind":"release","record":{"owner":"a","epoch":1,"tx":"y","attempt":1,"result":"released"}}
+{"at":6,"kind":"restart","record":{}}
+{"at":7,"kind":"inspect","record":{"tx":"x"}}
+{"at":8,"kind":"release","record":{"owner":"b","epoch":1,"tx":"y","attempt":1,"result":"prepared"}}
+{"at":9,"kind":"inspect","record":{"tx":"y"}}

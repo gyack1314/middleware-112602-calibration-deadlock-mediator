@@ -1,0 +1,11 @@
+{"at":0,"kind":"owner","record":{"owner":"a","epoch":1}}
+{"at":0,"kind":"owner","record":{"owner":"b","epoch":1}}
+{"at":1,"kind":"request","record":{"tx":"x","attempt":1,"priority":2,"deadline":10,"resources":["a/r","b/s"]}}
+{"at":1,"kind":"request","record":{"tx":"y","attempt":1,"priority":1,"deadline":12,"resources":["a/r","b/s"]}}
+{"at":2,"kind":"hold","record":{"owner":"a","epoch":1,"resource":"r","tx":"x","attempt":1,"phase":"reversible"}}
+{"at":2,"kind":"hold","record":{"owner":"b","epoch":1,"resource":"s","tx":"y","attempt":1,"phase":"reversible"}}
+{"at":3,"kind":"wait","record":{"owner":"a","epoch":1,"resource":"r","tx":"y","attempt":1,"on":"x"}}
+{"at":4,"kind":"owner","record":{"owner":"b","epoch":2}}
+{"at":5,"kind":"wait","record":{"owner":"b","epoch":1,"resource":"s","tx":"x","attempt":1,"on":"y"}}
+{"at":6,"kind":"scan","record":{}}
+{"at":7,"kind":"inspect","record":{"tx":"x"}}
